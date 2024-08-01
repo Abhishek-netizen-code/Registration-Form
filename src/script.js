@@ -1,3 +1,4 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
@@ -5,6 +6,7 @@ const phone = document.getElementById('phone');
 const password = document.getElementById('password');
 const cpassword = document.getElementById('cpassword');
 
+//add event
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     validate();
@@ -26,7 +28,7 @@ const successMsg = (usernameVal) => {
     
     for(var i = 0; i < formCon.length; i++) {
         if(formCon[i].className === "form-control success") {
-            var sRate = 0+ i;
+            var sRate = 0  + i;
             console.log(sRate);
             sendData(usernameVal, sRate, count);
         } else {
@@ -46,6 +48,7 @@ const isEmail = (emailVal) => {
     
 }
 
+// define the validate functi on
 const validate = () => {
     const usernameVal = username.value.trim();
     const emailVal = email.value.trim();
@@ -91,7 +94,7 @@ const validate = () => {
         setErrorMsg(cpassword, 'password are not matching');
     } else {
         setSuccessMsg(cpassword);
-    }
+    }  
     successMsg(usernameVal);
 }
 
